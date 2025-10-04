@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Politique de Confidentialité - Re3el4u</title>
+    <title>TikTok Video Publisher - Publiez vos vidéos Google Drive sur TikTok</title>
     <style>
         * {
             margin: 0;
@@ -15,7 +15,7 @@
             font-family: 'Inter', 'Segoe UI', sans-serif;
             background: #1a1d2e;
             color: #fff;
-            line-height: 1.8;
+            line-height: 1.6;
         }
 
         /* Navigation */
@@ -40,11 +40,13 @@
         }
 
         .logo {
-            font-size: 24px;
+            font-size: 20px;
             font-weight: 800;
             color: #ff6b35;
-            letter-spacing: -1px;
-            text-decoration: none;
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .nav-links {
@@ -64,125 +66,282 @@
             color: #ff6b35;
         }
 
+        .cta-button {
+            background: #ff6b35;
+            color: #fff;
+            padding: 12px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cta-button:hover {
+            background: #ff8555;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+        }
+
+        /* TikTok Button */
+        .tiktok-button {
+            background: #000;
+            color: #fff;
+            padding: 14px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid #fff;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        .tiktok-button:hover {
+            background: #fff;
+            color: #000;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+        }
+
+        .tiktok-button svg {
+            margin-right: 10px;
+        }
+
         /* Hero Section */
         .hero {
             margin-top: 80px;
-            padding: 80px 40px 60px;
+            padding: 120px 40px;
             text-align: center;
             background: linear-gradient(135deg, #1a1d2e 0%, #2d1b3d 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(255, 107, 53, 0.1) 0%, transparent 50%);
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
         .hero h1 {
-            font-size: 56px;
+            font-size: 58px;
             font-weight: 800;
-            margin-bottom: 16px;
+            margin-bottom: 24px;
+            line-height: 1.2;
         }
 
-        .gradient-text {
+        .hero .gradient-text {
             background: linear-gradient(135deg, #ff6b35 0%, #ff8555 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        .date {
-            color: rgba(255, 255, 255, 0.6);
-            font-style: italic;
-            margin-top: 10px;
+        .hero p {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 40px;
         }
 
-        /* Content Section */
-        .content-section {
-            max-width: 900px;
+        .button-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 100px 40px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 60px 40px;
         }
 
-        .policy-card {
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
             background: #252841;
             padding: 40px;
             border-radius: 16px;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            margin-bottom: 30px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
         }
 
-        .policy-card h2 {
-            color: #ff6b35;
-            font-size: 28px;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ff6b35 0%, #ff8555 100%);
+            transform: scaleX(0);
+            transition: transform 0.3s;
         }
 
-        .policy-card h2::before {
-            content: '▸';
-            color: #ff6b35;
+        .feature-card:hover {
+            transform: translateY(-8px);
+            border-color: #ff6b35;
+            box-shadow: 0 20px 40px rgba(255, 107, 53, 0.2);
         }
 
-        .policy-card p {
-            color: rgba(255, 255, 255, 0.8);
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 24px;
+        }
+
+        .feature-card h3 {
+            font-size: 24px;
             margin-bottom: 16px;
-            text-align: justify;
+            color: #fff;
         }
 
-        .policy-card ul {
-            margin: 16px 0;
-            padding-left: 30px;
-        }
-
-        .policy-card li {
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 12px;
+        .feature-card p {
+            color: rgba(255, 255, 255, 0.7);
             line-height: 1.8;
         }
 
-        .policy-card strong {
-            color: #ff6b35;
-            font-weight: 600;
+        /* How It Works */
+        .how-it-works {
+            padding: 100px 40px;
+            background: #252841;
         }
 
-        .highlight-box {
-            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(255, 133, 85, 0.1) 100%);
-            border-left: 4px solid #ff6b35;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 8px;
+        .steps-container {
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
-        .highlight-box p {
-            margin: 0;
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        /* Back Button */
-        .back-button {
-            display: inline-flex;
+        .step {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 60px;
             align-items: center;
-            gap: 10px;
-            background: #ff6b35;
-            color: #fff;
-            padding: 14px 28px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            margin-top: 40px;
         }
 
-        .back-button:hover {
-            background: #ff8555;
-            transform: translateX(-5px);
-            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #ff6b35 0%, #ff8555 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        .step-content h3 {
+            font-size: 28px;
+            margin-bottom: 12px;
+            color: #ff6b35;
+        }
+
+        .step-content p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 18px;
+            line-height: 1.8;
         }
 
         /* Footer */
         footer {
             background: #0f1117;
-            padding: 40px;
+            padding: 60px 40px 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #ff6b35;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 12px;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #ff6b35;
+        }
+
+        .footer-bottom {
             text-align: center;
+            padding-top: 30px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: rgba(255, 255, 255, 0.5);
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(16, 185, 129, 0.2);
+            color: #10b981;
+            border: 1px solid #10b981;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 20px;
         }
 
         @media (max-width: 768px) {
@@ -193,6 +352,16 @@
             .nav-links {
                 display: none;
             }
+
+            .button-group {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .step {
+                flex-direction: column;
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -200,139 +369,181 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <a href="/" class="logo">re3el4u</a>
+            <div class="logo">
+                <span>📹</span>
+                <span>TikTok Publisher</span>
+            </div>
             <ul class="nav-links">
-                <li><a href="/">Accueil</a></li>
-                <li><a href="/#services">Services</a></li>
-                <li><a href="/#about">À propos</a></li>
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#features">Fonctionnalités</a></li>
+                <li><a href="#how-it-works">Comment ça marche</a></li>
                 <li><a href="/privacy.html">Confidentialité</a></li>
                 <li><a href="/contact.html">Contact</a></li>
             </ul>
+            <a href="#start" class="cta-button">Commencer</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <h1><span class="gradient-text">🔒 Politique de Confidentialité</span></h1>
-        <p class="date">Dernière mise à jour : 4 octobre 2025</p>
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>
+                Publiez vos vidéos<br>
+                <span class="gradient-text">Google Drive vers TikTok</span>
+            </h1>
+            <p>La solution la plus simple pour publier automatiquement vos vidéos stockées sur Google Drive directement sur TikTok. Gagnez du temps et simplifiez votre workflow de création de contenu.</p>
+            
+            <div class="button-group">
+                <a href="#how-it-works" class="cta-button">Découvrir comment</a>
+                <button id="tiktok-login-btn" class="tiktok-button">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                    </svg>
+                    Connecter TikTok
+                </button>
+            </div>
+            
+            <div class="status-badge">✓ Plateforme Vérifiée et Sécurisée</div>
+        </div>
     </section>
 
-    <!-- Content Section -->
-    <section class="content-section">
-        <div class="policy-card">
-            <h2>1. Introduction</h2>
-            <p>
-                Bienvenue sur Re3el4u. Nous respectons votre vie privée et nous nous engageons à protéger vos données personnelles. 
-                Cette politique de confidentialité vous informe sur la manière dont nous collectons, utilisons et protégeons vos informations 
-                lorsque vous utilisez notre application en lien avec TikTok.
-            </p>
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="section-header">
+            <h2>Fonctionnalités Puissantes</h2>
+            <p>Tout ce dont vous avez besoin pour automatiser vos publications TikTok</p>
         </div>
-
-        <div class="policy-card">
-            <h2>2. Données Collectées</h2>
-            <p>Dans le cadre de l'utilisation de notre application avec TikTok, nous pouvons collecter les types de données suivants :</p>
-            <ul>
-                <li><strong>Informations de profil TikTok :</strong> nom d'utilisateur, photo de profil, identifiant utilisateur</li>
-                <li><strong>Données d'utilisation :</strong> interactions avec l'application, préférences</li>
-                <li><strong>Données techniques :</strong> adresse IP, type de navigateur, système d'exploitation</li>
-                <li><strong>Cookies et technologies similaires</strong> pour améliorer votre expérience</li>
-            </ul>
-        </div>
-
-        <div class="policy-card">
-            <h2>3. Utilisation des Données</h2>
-            <p>Nous utilisons vos données pour :</p>
-            <ul>
-                <li>Fournir et améliorer nos services</li>
-                <li>Personnaliser votre expérience utilisateur</li>
-                <li>Communiquer avec vous concernant notre service</li>
-                <li>Assurer la sécurité et prévenir la fraude</li>
-                <li>Respecter nos obligations légales</li>
-            </ul>
-        </div>
-
-        <div class="policy-card">
-            <h2>4. Partage des Données</h2>
-            <div class="highlight-box">
-                <p><strong>⚠️ Important :</strong> Nous ne vendons JAMAIS vos données personnelles.</p>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">☁️</div>
+                <h3>Intégration Google Drive</h3>
+                <p>Connectez votre Google Drive et accédez facilement à toutes vos vidéos stockées dans le cloud.</p>
             </div>
-            <p>Nous pouvons partager vos informations uniquement dans les cas suivants :</p>
-            <ul>
-                <li>Avec TikTok, conformément à leur politique de confidentialité</li>
-                <li>Avec des prestataires de services qui nous aident à fournir notre application</li>
-                <li>Si requis par la loi ou pour protéger nos droits légaux</li>
-            </ul>
-        </div>
-
-        <div class="policy-card">
-            <h2>5. Sécurité des Données</h2>
-            <p>
-                Nous mettons en œuvre des mesures de sécurité techniques et organisationnelles appropriées pour protéger vos données contre 
-                tout accès non autorisé, perte ou divulgation. Notre site est hébergé sur Cloudflare Pages avec une connexion HTTPS sécurisée 
-                et un chiffrement de niveau entreprise.
-            </p>
-        </div>
-
-        <div class="policy-card">
-            <h2>6. Vos Droits</h2>
-            <p>Conformément au RGPD et aux lois sur la protection des données, vous disposez des droits suivants :</p>
-            <ul>
-                <li><strong>Droit d'accès :</strong> obtenir une copie de vos données personnelles</li>
-                <li><strong>Droit de rectification :</strong> corriger vos données inexactes</li>
-                <li><strong>Droit à l'effacement :</strong> demander la suppression de vos données</li>
-                <li><strong>Droit d'opposition :</strong> vous opposer au traitement de vos données</li>
-                <li><strong>Droit à la portabilité :</strong> recevoir vos données dans un format structuré</li>
-            </ul>
-        </div>
-
-        <div class="policy-card">
-            <h2>7. Conservation des Données</h2>
-            <p>
-                Nous conservons vos données personnelles uniquement pendant la durée nécessaire aux fins pour lesquelles elles ont été collectées, 
-                ou conformément aux exigences légales. Les données inactives sont supprimées automatiquement après une période définie.
-            </p>
-        </div>
-
-        <div class="policy-card">
-            <h2>8. Cookies</h2>
-            <p>
-                Notre application peut utiliser des cookies pour améliorer votre expérience. Vous pouvez configurer votre navigateur pour 
-                refuser les cookies, mais cela peut affecter certaines fonctionnalités de l'application. Nous utilisons uniquement des cookies 
-                essentiels et analytiques.
-            </p>
-        </div>
-
-        <div class="policy-card">
-            <h2>9. Modifications de Cette Politique</h2>
-            <p>
-                Nous pouvons mettre à jour cette politique de confidentialité périodiquement. Nous vous informerons de tout changement 
-                significatif en publiant la nouvelle politique sur cette page avec une date de mise à jour révisée. Votre utilisation 
-                continue du service après les modifications constitue votre acceptation de la nouvelle politique.
-            </p>
-        </div>
-
-        <div class="policy-card">
-            <h2>10. Contact</h2>
-            <p>
-                Pour toute question concernant cette politique de confidentialité ou pour exercer vos droits, 
-                veuillez nous contacter à :
-            </p>
-            <div class="highlight-box">
-                <p><strong>📧 Email :</strong> support@re3el4u.com</p>
-                <p><strong>🌐 Site Web :</strong> https://re3el4u.pages.dev</p>
+            <div class="feature-card">
+                <div class="feature-icon">🎵</div>
+                <h3>Publication Automatique TikTok</h3>
+                <p>Publiez vos vidéos directement sur TikTok via l'API officielle en quelques clics seulement.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Rapide et Efficace</h3>
+                <p>Processus optimisé pour une publication ultra-rapide sans perte de qualité vidéo.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔐</div>
+                <h3>100% Sécurisé</h3>
+                <p>Chiffrement de bout en bout et conformité RGPD. Vos données restent privées et protégées.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Suivi des Publications</h3>
+                <p>Suivez l'état de vos publications et consultez l'historique de vos vidéos publiées.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Personnalisation Complète</h3>
+                <p>Ajoutez des descriptions, hashtags et configurez la visibilité de chaque publication.</p>
             </div>
         </div>
+    </section>
 
-        <center>
-            <a href="/" class="back-button">
-                ← Retour à l'accueil
-            </a>
-        </center>
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="steps-container">
+            <div class="section-header">
+                <h2>Comment Ça Marche</h2>
+                <p>3 étapes simples pour commencer à publier</p>
+            </div>
+
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Connectez vos comptes</h3>
+                    <p>Autorisez l'accès à votre Google Drive et à votre compte TikTok via OAuth 2.0 sécurisé. Tout se fait en quelques clics sans compromettre vos identifiants.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Sélectionnez vos vidéos</h3>
+                    <p>Parcourez vos dossiers Google Drive et sélectionnez les vidéos que vous souhaitez publier sur TikTok. Prévisualisez-les avant la publication.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Publiez instantanément</h3>
+                    <p>Ajoutez une description, des hashtags, configurez la visibilité et publiez ! Votre vidéo sera disponible sur TikTok en quelques secondes.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>© 2025 Re3el4u. Tous droits réservés. | Propulsé par Cloudflare Pages 🔒</p>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>TikTok Video Publisher</h3>
+                <p>La solution professionnelle pour publier vos vidéos Google Drive sur TikTok automatiquement.</p>
+                <div class="status-badge">✓ API Officielle TikTok</div>
+            </div>
+            <div class="footer-section">
+                <h3>Liens Rapides</h3>
+                <a href="/">Accueil</a>
+                <a href="#features">Fonctionnalités</a>
+                <a href="#how-it-works">Comment ça marche</a>
+                <a href="/contact.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Légal</h3>
+                <a href="/privacy.html">Politique de Confidentialité</a>
+                <a href="/terms.html">Conditions d'Utilisation</a>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <p>Email: support@tiktok-publisher.com</p>
+                <p>Plateforme: TikTok for Developers</p>
+                <p>Hébergement: Cloudflare Pages</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 TikTok Video Publisher. Tous droits réservés. | Propulsé par Cloudflare Pages 🔒</p>
+        </div>
     </footer>
+
+    <script>
+        // Configuration TikTok OAuth
+        const TIKTOK_CONFIG = {
+            client_key: 'VOTRE_CLIENT_KEY_ICI', // À remplacer par votre Client Key
+            redirect_uri: 'https://tiktok-video-publisher-from-google-drive.pages.dev/callback',
+            scope: 'user.info.basic,video.upload,video.publish', // Scopes nécessaires
+        };
+
+        // Fonction de connexion TikTok
+        document.getElementById('tiktok-login-btn').addEventListener('click', function() {
+            // Générer un state aléatoire pour la sécurité
+            const state = Math.random().toString(36).substring(7);
+            sessionStorage.setItem('tiktok_auth_state', state);
+
+            // Construire l'URL d'autorisation TikTok
+            const authUrl = `https://www.tiktok.com/v2/auth/authorize/` +
+                `?client_key=${TIKTOK_CONFIG.client_key}` +
+                `&scope=${TIKTOK_CONFIG.scope}` +
+                `&response_type=code` +
+                `&redirect_uri=${encodeURIComponent(TIKTOK_CONFIG.redirect_uri)}` +
+                `&state=${state}`;
+
+            // Vérifier si la clé API est configurée
+            if (TIKTOK_CONFIG.client_key === 'VOTRE_CLIENT_KEY_ICI') {
+                alert('⚠️ Veuillez d\'abord configurer votre Client Key TikTok dans le code JavaScript.');
+                return;
+            }
+
+            // Rediriger vers TikTok pour l'authentification
+            window.location.href = authUrl;
+        });
+    </script>
 </body>
 </html>
