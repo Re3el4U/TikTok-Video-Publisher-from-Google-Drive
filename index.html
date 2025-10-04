@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Re3el4u - TikTok Integration Platform</title>
+    <title>Politique de Confidentialité - Re3el4u</title>
     <style>
         * {
             margin: 0;
@@ -15,7 +15,7 @@
             font-family: 'Inter', 'Segoe UI', sans-serif;
             background: #1a1d2e;
             color: #fff;
-            line-height: 1.6;
+            line-height: 1.8;
         }
 
         /* Navigation */
@@ -44,6 +44,7 @@
             font-weight: 800;
             color: #ff6b35;
             letter-spacing: -1px;
+            text-decoration: none;
         }
 
         .nav-links {
@@ -63,289 +64,130 @@
             color: #ff6b35;
         }
 
-        .cta-button {
-            background: #ff6b35;
-            color: #fff;
-            padding: 12px 28px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-
-        .cta-button:hover {
-            background: #ff8555;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
-        }
-
         /* Hero Section */
         .hero {
             margin-top: 80px;
-            padding: 120px 40px;
+            padding: 80px 40px 60px;
             text-align: center;
             background: linear-gradient(135deg, #1a1d2e 0%, #2d1b3d 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 50% 50%, rgba(255, 107, 53, 0.1) 0%, transparent 50%);
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
         }
 
         .hero h1 {
-            font-size: 64px;
+            font-size: 56px;
             font-weight: 800;
-            margin-bottom: 24px;
-            line-height: 1.2;
+            margin-bottom: 16px;
         }
 
-        .hero .gradient-text {
+        .gradient-text {
             background: linear-gradient(135deg, #ff6b35 0%, #ff8555 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        .hero p {
-            font-size: 20px;
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 40px;
-        }
-
-        /* Services Section */
-        .services {
-            padding: 100px 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-header h2 {
-            font-size: 48px;
-            font-weight: 800;
-            margin-bottom: 16px;
-        }
-
-        .section-header p {
-            font-size: 18px;
+        .date {
             color: rgba(255, 255, 255, 0.6);
+            font-style: italic;
+            margin-top: 10px;
         }
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+        /* Content Section */
+        .content-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 40px;
         }
 
-        .service-card {
+        .policy-card {
             background: #252841;
             padding: 40px;
             border-radius: 16px;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
+            margin-bottom: 30px;
         }
 
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #ff6b35 0%, #ff8555 100%);
-            transform: scaleX(0);
-            transition: transform 0.3s;
+        .policy-card h2 {
+            color: #ff6b35;
+            font-size: 28px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
 
-        .service-card:hover {
-            transform: translateY(-8px);
-            border-color: #ff6b35;
-            box-shadow: 0 20px 40px rgba(255, 107, 53, 0.2);
+        .policy-card h2::before {
+            content: '▸';
+            color: #ff6b35;
         }
 
-        .service-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .service-icon {
-            font-size: 48px;
-            margin-bottom: 24px;
-        }
-
-        .service-card h3 {
-            font-size: 24px;
+        .policy-card p {
+            color: rgba(255, 255, 255, 0.8);
             margin-bottom: 16px;
-            color: #fff;
+            text-align: justify;
         }
 
-        .service-card p {
-            color: rgba(255, 255, 255, 0.7);
+        .policy-card ul {
+            margin: 16px 0;
+            padding-left: 30px;
+        }
+
+        .policy-card li {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 12px;
             line-height: 1.8;
         }
 
-        /* About Section */
-        .about {
-            padding: 100px 40px;
-            background: #252841;
+        .policy-card strong {
+            color: #ff6b35;
+            font-weight: 600;
         }
 
-        .about-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(255, 133, 85, 0.1) 100%);
+            border-left: 4px solid #ff6b35;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .highlight-box p {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Back Button */
+        .back-button {
+            display: inline-flex;
             align-items: center;
+            gap: 10px;
+            background: #ff6b35;
+            color: #fff;
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin-top: 40px;
         }
 
-        .about-image {
-            position: relative;
-            border-radius: 16px;
-            overflow: hidden;
-        }
-
-        .about-image img {
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
-            border-radius: 16px;
-        }
-
-        .about-content h2 {
-            font-size: 48px;
-            margin-bottom: 24px;
-        }
-
-        .about-content p {
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 24px;
-            font-size: 18px;
-        }
-
-        /* Features */
-        .features {
-            padding: 100px 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-        }
-
-        .feature-item {
-            display: flex;
-            gap: 24px;
-        }
-
-        .feature-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #ff6b35 0%, #ff8555 100%);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-            flex-shrink: 0;
-        }
-
-        .feature-content h3 {
-            font-size: 22px;
-            margin-bottom: 12px;
-        }
-
-        .feature-content p {
-            color: rgba(255, 255, 255, 0.7);
+        .back-button:hover {
+            background: #ff8555;
+            transform: translateX(-5px);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
         }
 
         /* Footer */
         footer {
             background: #0f1117;
-            padding: 60px 40px 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-section h3 {
-            font-size: 20px;
-            margin-bottom: 20px;
-            color: #ff6b35;
-        }
-
-        .footer-section p,
-        .footer-section a {
-            color: rgba(255, 255, 255, 0.6);
-            text-decoration: none;
-            display: block;
-            margin-bottom: 12px;
-            transition: color 0.3s;
-        }
-
-        .footer-section a:hover {
-            color: #ff6b35;
-        }
-
-        .footer-bottom {
+            padding: 40px;
             text-align: center;
-            padding-top: 30px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: rgba(255, 255, 255, 0.5);
         }
 
-        .status-badge {
-            display: inline-block;
-            padding: 8px 16px;
-            background: rgba(16, 185, 129, 0.2);
-            color: #10b981;
-            border: 1px solid #10b981;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 600;
-            margin-top: 20px;
-        }
-
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 40px;
-            }
-            
-            .about-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .features-grid {
-                grid-template-columns: 1fr;
+                font-size: 36px;
             }
             
             .nav-links {
@@ -358,157 +200,139 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <div class="logo">re3el4u</div>
+            <a href="/" class="logo">re3el4u</a>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="/privacy.html">Privacy</a></li>
+                <li><a href="/">Accueil</a></li>
+                <li><a href="/#services">Services</a></li>
+                <li><a href="/#about">À propos</a></li>
+                <li><a href="/privacy.html">Confidentialité</a></li>
                 <li><a href="/contact.html">Contact</a></li>
             </ul>
-            <a href="#contact" class="cta-button">Get Started</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>
-                Connect & Grow<br>
-                <span class="gradient-text">With TikTok</span>
-            </h1>
-            <p>Professional TikTok API integration platform for seamless authentication, content sharing, and enhanced user engagement.</p>
-            <a href="#services" class="cta-button">Explore Features</a>
-            <div class="status-badge">✓ Verified & Active Platform</div>
-        </div>
+    <section class="hero">
+        <h1><span class="gradient-text">🔒 Politique de Confidentialité</span></h1>
+        <p class="date">Dernière mise à jour : 4 octobre 2025</p>
     </section>
 
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="section-header">
-            <h2>What We Offer</h2>
-            <p>Comprehensive TikTok integration solutions for your platform</p>
+    <!-- Content Section -->
+    <section class="content-section">
+        <div class="policy-card">
+            <h2>1. Introduction</h2>
+            <p>
+                Bienvenue sur Re3el4u. Nous respectons votre vie privée et nous nous engageons à protéger vos données personnelles. 
+                Cette politique de confidentialité vous informe sur la manière dont nous collectons, utilisons et protégeons vos informations 
+                lorsque vous utilisez notre application en lien avec TikTok.
+            </p>
         </div>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">🔐</div>
-                <h3>TikTok Authentication</h3>
-                <p>Seamless login integration allowing users to authenticate using their TikTok accounts with secure OAuth 2.0 implementation.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🎵</div>
-                <h3>Content Sharing</h3>
-                <p>Enable users to share and interact with TikTok content directly through your platform with full API support.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">📊</div>
-                <h3>Analytics & Insights</h3>
-                <p>Access detailed analytics and user insights through TikTok's powerful data APIs for better decision making.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">⚡</div>
-                <h3>Real-time Integration</h3>
-                <p>Fast, reliable, and real-time data synchronization with TikTok's platform for optimal user experience.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🛡️</div>
-                <h3>Secure & Compliant</h3>
-                <p>Fully compliant with TikTok's API policies, GDPR, and industry security standards to protect user data.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🚀</div>
-                <h3>Scalable Solutions</h3>
-                <p>Built to scale with your growing user base, ensuring consistent performance and reliability.</p>
-            </div>
-        </div>
-    </section>
 
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="about-container">
-            <div class="about-content">
-                <h2>About Re3el4u</h2>
-                <p>Re3el4u is a professional TikTok API integration platform designed to help businesses and developers seamlessly connect with TikTok's ecosystem.</p>
-                <p>Our platform provides robust, secure, and compliant solutions for authentication, content management, and user engagement through TikTok's official APIs.</p>
-                <p>With enterprise-grade security and full HTTPS encryption via Cloudflare Pages, your data and your users' data remain protected at all times.</p>
-                <a href="#contact" class="cta-button">Learn More</a>
-            </div>
-            <div class="about-image">
-                <div style="width: 100%; height: 500px; background: linear-gradient(135deg, #ff6b35 0%, #2d1b3d 100%); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 80px;">
-                    🎵
-                </div>
-            </div>
+        <div class="policy-card">
+            <h2>2. Données Collectées</h2>
+            <p>Dans le cadre de l'utilisation de notre application avec TikTok, nous pouvons collecter les types de données suivants :</p>
+            <ul>
+                <li><strong>Informations de profil TikTok :</strong> nom d'utilisateur, photo de profil, identifiant utilisateur</li>
+                <li><strong>Données d'utilisation :</strong> interactions avec l'application, préférences</li>
+                <li><strong>Données techniques :</strong> adresse IP, type de navigateur, système d'exploitation</li>
+                <li><strong>Cookies et technologies similaires</strong> pour améliorer votre expérience</li>
+            </ul>
         </div>
-    </section>
 
-    <!-- Features -->
-    <section class="features">
-        <div class="section-header">
-            <h2>Why Choose Us</h2>
-            <p>Built with developers and businesses in mind</p>
+        <div class="policy-card">
+            <h2>3. Utilisation des Données</h2>
+            <p>Nous utilisons vos données pour :</p>
+            <ul>
+                <li>Fournir et améliorer nos services</li>
+                <li>Personnaliser votre expérience utilisateur</li>
+                <li>Communiquer avec vous concernant notre service</li>
+                <li>Assurer la sécurité et prévenir la fraude</li>
+                <li>Respecter nos obligations légales</li>
+            </ul>
         </div>
-        <div class="features-grid">
-            <div class="feature-item">
-                <div class="feature-icon">⚡</div>
-                <div class="feature-content">
-                    <h3>Lightning Fast</h3>
-                    <p>Optimized performance with Cloudflare's global CDN ensures your integrations run at maximum speed.</p>
-                </div>
+
+        <div class="policy-card">
+            <h2>4. Partage des Données</h2>
+            <div class="highlight-box">
+                <p><strong>⚠️ Important :</strong> Nous ne vendons JAMAIS vos données personnelles.</p>
             </div>
-            <div class="feature-item">
-                <div class="feature-icon">🔒</div>
-                <div class="feature-content">
-                    <h3>Enterprise Security</h3>
-                    <p>Bank-level encryption and security protocols to keep all data safe and compliant with regulations.</p>
-                </div>
-            </div>
-            <div class="feature-item">
-                <div class="feature-icon">📱</div>
-                <div class="feature-content">
-                    <h3>Mobile Optimized</h3>
-                    <p>Fully responsive design ensures perfect experience across all devices and screen sizes.</p>
-                </div>
-            </div>
-            <div class="feature-item">
-                <div class="feature-icon">🌐</div>
-                <div class="feature-content">
-                    <h3>Global Reach</h3>
-                    <p>Hosted on Cloudflare's worldwide network for optimal performance in every region.</p>
-                </div>
+            <p>Nous pouvons partager vos informations uniquement dans les cas suivants :</p>
+            <ul>
+                <li>Avec TikTok, conformément à leur politique de confidentialité</li>
+                <li>Avec des prestataires de services qui nous aident à fournir notre application</li>
+                <li>Si requis par la loi ou pour protéger nos droits légaux</li>
+            </ul>
+        </div>
+
+        <div class="policy-card">
+            <h2>5. Sécurité des Données</h2>
+            <p>
+                Nous mettons en œuvre des mesures de sécurité techniques et organisationnelles appropriées pour protéger vos données contre 
+                tout accès non autorisé, perte ou divulgation. Notre site est hébergé sur Cloudflare Pages avec une connexion HTTPS sécurisée 
+                et un chiffrement de niveau entreprise.
+            </p>
+        </div>
+
+        <div class="policy-card">
+            <h2>6. Vos Droits</h2>
+            <p>Conformément au RGPD et aux lois sur la protection des données, vous disposez des droits suivants :</p>
+            <ul>
+                <li><strong>Droit d'accès :</strong> obtenir une copie de vos données personnelles</li>
+                <li><strong>Droit de rectification :</strong> corriger vos données inexactes</li>
+                <li><strong>Droit à l'effacement :</strong> demander la suppression de vos données</li>
+                <li><strong>Droit d'opposition :</strong> vous opposer au traitement de vos données</li>
+                <li><strong>Droit à la portabilité :</strong> recevoir vos données dans un format structuré</li>
+            </ul>
+        </div>
+
+        <div class="policy-card">
+            <h2>7. Conservation des Données</h2>
+            <p>
+                Nous conservons vos données personnelles uniquement pendant la durée nécessaire aux fins pour lesquelles elles ont été collectées, 
+                ou conformément aux exigences légales. Les données inactives sont supprimées automatiquement après une période définie.
+            </p>
+        </div>
+
+        <div class="policy-card">
+            <h2>8. Cookies</h2>
+            <p>
+                Notre application peut utiliser des cookies pour améliorer votre expérience. Vous pouvez configurer votre navigateur pour 
+                refuser les cookies, mais cela peut affecter certaines fonctionnalités de l'application. Nous utilisons uniquement des cookies 
+                essentiels et analytiques.
+            </p>
+        </div>
+
+        <div class="policy-card">
+            <h2>9. Modifications de Cette Politique</h2>
+            <p>
+                Nous pouvons mettre à jour cette politique de confidentialité périodiquement. Nous vous informerons de tout changement 
+                significatif en publiant la nouvelle politique sur cette page avec une date de mise à jour révisée. Votre utilisation 
+                continue du service après les modifications constitue votre acceptation de la nouvelle politique.
+            </p>
+        </div>
+
+        <div class="policy-card">
+            <h2>10. Contact</h2>
+            <p>
+                Pour toute question concernant cette politique de confidentialité ou pour exercer vos droits, 
+                veuillez nous contacter à :
+            </p>
+            <div class="highlight-box">
+                <p><strong>📧 Email :</strong> support@re3el4u.com</p>
+                <p><strong>🌐 Site Web :</strong> https://re3el4u.pages.dev</p>
             </div>
         </div>
+
+        <center>
+            <a href="/" class="back-button">
+                ← Retour à l'accueil
+            </a>
+        </center>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-container">
-            <div class="footer-section">
-                <h3>Re3el4u</h3>
-                <p>Professional TikTok API integration platform for modern businesses and developers.</p>
-                <div class="status-badge">✓ Verified Platform</div>
-            </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <a href="/">Home</a>
-                <a href="#services">Services</a>
-                <a href="#about">About</a>
-                <a href="/contact.html">Contact</a>
-            </div>
-            <div class="footer-section">
-                <h3>Legal</h3>
-                <a href="/privacy.html">Privacy Policy</a>
-                <a href="/terms.html">Terms of Service</a>
-            </div>
-            <div class="footer-section">
-                <h3>Contact</h3>
-                <p>Email: support@re3el4u.com</p>
-                <p>Platform: TikTok for Developers</p>
-                <p>Hosting: Cloudflare Pages</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2025 Re3el4u. All rights reserved. | Powered by Cloudflare Pages 🔒</p>
-        </div>
+        <p>© 2025 Re3el4u. Tous droits réservés. | Propulsé par Cloudflare Pages 🔒</p>
     </footer>
 </body>
 </html>
