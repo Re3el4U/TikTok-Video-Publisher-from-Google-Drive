@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Politique de Confidentialité - Re3el4u</title>
+    <title>Contact - TikTok Video Publisher</title>
     <style>
         * {
             margin: 0;
@@ -15,10 +15,9 @@
             font-family: 'Inter', 'Segoe UI', sans-serif;
             background: #1a1d2e;
             color: #fff;
-            line-height: 1.8;
+            line-height: 1.6;
         }
 
-        /* Navigation */
         nav {
             position: fixed;
             top: 0;
@@ -40,11 +39,14 @@
         }
 
         .logo {
-            font-size: 24px;
+            font-size: 20px;
             font-weight: 800;
             color: #ff6b35;
-            letter-spacing: -1px;
+            letter-spacing: -0.5px;
             text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .nav-links {
@@ -64,7 +66,6 @@
             color: #ff6b35;
         }
 
-        /* Hero Section */
         .hero {
             margin-top: 80px;
             padding: 80px 40px 60px;
@@ -85,98 +86,107 @@
             background-clip: text;
         }
 
-        .date {
+        .hero p {
+            font-size: 18px;
             color: rgba(255, 255, 255, 0.6);
-            font-style: italic;
-            margin-top: 10px;
         }
 
-        /* Content Section */
-        .content-section {
-            max-width: 900px;
+        .contact-section {
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 60px 40px;
+            padding: 80px 40px;
         }
 
-        .policy-card {
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .contact-card {
             background: #252841;
             padding: 40px;
             border-radius: 16px;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            margin-bottom: 30px;
+            transition: all 0.3s;
+            text-align: center;
         }
 
-        .policy-card h2 {
-            color: #ff6b35;
-            font-size: 28px;
+        .contact-card:hover {
+            transform: translateY(-8px);
+            border-color: #ff6b35;
+            box-shadow: 0 20px 40px rgba(255, 107, 53, 0.2);
+        }
+
+        .contact-icon {
+            font-size: 48px;
             margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
         }
 
-        .policy-card h2::before {
-            content: '▸';
+        .contact-card h3 {
+            font-size: 24px;
+            margin-bottom: 12px;
             color: #ff6b35;
         }
 
-        .policy-card p {
-            color: rgba(255, 255, 255, 0.8);
+        .contact-card p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 8px;
+        }
+
+        .contact-card a {
+            color: #ff6b35;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .contact-card a:hover {
+            color: #ff8555;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #ff6b35 0%, #ff8555 100%);
+            padding: 40px;
+            border-radius: 16px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .info-box h3 {
+            font-size: 28px;
             margin-bottom: 16px;
-            text-align: justify;
+            color: #fff;
         }
 
-        .policy-card ul {
-            margin: 16px 0;
-            padding-left: 30px;
-        }
-
-        .policy-card li {
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 12px;
+        .info-box p {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.9);
             line-height: 1.8;
         }
 
-        .policy-card strong {
-            color: #ff6b35;
-            font-weight: 600;
-        }
-
-        .highlight-box {
-            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(255, 133, 85, 0.1) 100%);
-            border-left: 4px solid #ff6b35;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 8px;
-        }
-
-        .highlight-box p {
-            margin: 0;
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        /* Back Button */
         .back-button {
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: #ff6b35;
+            background: #252841;
             color: #fff;
             padding: 14px 28px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             margin-top: 40px;
         }
 
         .back-button:hover {
-            background: #ff8555;
+            background: #ff6b35;
+            border-color: #ff6b35;
             transform: translateX(-5px);
-            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
         }
 
-        /* Footer */
         footer {
             background: #0f1117;
             padding: 40px;
@@ -189,138 +199,89 @@
             .hero h1 {
                 font-size: 36px;
             }
-            
             .nav-links {
                 display: none;
+            }
+            .contact-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <a href="/" class="logo">re3el4u</a>
+            <a href="/" class="logo">
+                <span>📹</span>
+                <span>TikTok Publisher</span>
+            </a>
             <ul class="nav-links">
                 <li><a href="/">Accueil</a></li>
-                <li><a href="/#services">Services</a></li>
-                <li><a href="/#about">À propos</a></li>
+                <li><a href="/#features">Fonctionnalités</a></li>
                 <li><a href="/privacy.html">Confidentialité</a></li>
                 <li><a href="/contact.html">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero">
-        <h1><span class="gradient-text">🔒 Politique de Confidentialité</span></h1>
-        <p class="date">Dernière mise à jour : 4 octobre 2025</p>
+        <h1><span class="gradient-text">📧 Contactez-nous</span></h1>
+        <p>Notre équipe est là pour vous aider</p>
     </section>
 
-    <!-- Content Section -->
-    <section class="content-section">
-        <div class="policy-card">
-            <h2>1. Introduction</h2>
-            <p>
-                Bienvenue sur Re3el4u. Nous respectons votre vie privée et nous nous engageons à protéger vos données personnelles. 
-                Cette politique de confidentialité vous informe sur la manière dont nous collectons, utilisons et protégeons vos informations 
-                lorsque vous utilisez notre application en lien avec TikTok.
-            </p>
-        </div>
-
-        <div class="policy-card">
-            <h2>2. Données Collectées</h2>
-            <p>Dans le cadre de l'utilisation de notre application avec TikTok, nous pouvons collecter les types de données suivants :</p>
-            <ul>
-                <li><strong>Informations de profil TikTok :</strong> nom d'utilisateur, photo de profil, identifiant utilisateur</li>
-                <li><strong>Données d'utilisation :</strong> interactions avec l'application, préférences</li>
-                <li><strong>Données techniques :</strong> adresse IP, type de navigateur, système d'exploitation</li>
-                <li><strong>Cookies et technologies similaires</strong> pour améliorer votre expérience</li>
-            </ul>
-        </div>
-
-        <div class="policy-card">
-            <h2>3. Utilisation des Données</h2>
-            <p>Nous utilisons vos données pour :</p>
-            <ul>
-                <li>Fournir et améliorer nos services</li>
-                <li>Personnaliser votre expérience utilisateur</li>
-                <li>Communiquer avec vous concernant notre service</li>
-                <li>Assurer la sécurité et prévenir la fraude</li>
-                <li>Respecter nos obligations légales</li>
-            </ul>
-        </div>
-
-        <div class="policy-card">
-            <h2>4. Partage des Données</h2>
-            <div class="highlight-box">
-                <p><strong>⚠️ Important :</strong> Nous ne vendons JAMAIS vos données personnelles.</p>
+    <section class="contact-section">
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="contact-icon">✉️</div>
+                <h3>Email de Support</h3>
+                <p>Pour toute question technique ou aide</p>
+                <a href="mailto:support@tiktok-publisher.com">support@tiktok-publisher.com</a>
             </div>
-            <p>Nous pouvons partager vos informations uniquement dans les cas suivants :</p>
-            <ul>
-                <li>Avec TikTok, conformément à leur politique de confidentialité</li>
-                <li>Avec des prestataires de services qui nous aident à fournir notre application</li>
-                <li>Si requis par la loi ou pour protéger nos droits légaux</li>
-            </ul>
-        </div>
 
-        <div class="policy-card">
-            <h2>5. Sécurité des Données</h2>
-            <p>
-                Nous mettons en œuvre des mesures de sécurité techniques et organisationnelles appropriées pour protéger vos données contre 
-                tout accès non autorisé, perte ou divulgation. Notre site est hébergé sur Cloudflare Pages avec une connexion HTTPS sécurisée 
-                et un chiffrement de niveau entreprise.
-            </p>
-        </div>
-
-        <div class="policy-card">
-            <h2>6. Vos Droits</h2>
-            <p>Conformément au RGPD et aux lois sur la protection des données, vous disposez des droits suivants :</p>
-            <ul>
-                <li><strong>Droit d'accès :</strong> obtenir une copie de vos données personnelles</li>
-                <li><strong>Droit de rectification :</strong> corriger vos données inexactes</li>
-                <li><strong>Droit à l'effacement :</strong> demander la suppression de vos données</li>
-                <li><strong>Droit d'opposition :</strong> vous opposer au traitement de vos données</li>
-                <li><strong>Droit à la portabilité :</strong> recevoir vos données dans un format structuré</li>
-            </ul>
-        </div>
-
-        <div class="policy-card">
-            <h2>7. Conservation des Données</h2>
-            <p>
-                Nous conservons vos données personnelles uniquement pendant la durée nécessaire aux fins pour lesquelles elles ont été collectées, 
-                ou conformément aux exigences légales. Les données inactives sont supprimées automatiquement après une période définie.
-            </p>
-        </div>
-
-        <div class="policy-card">
-            <h2>8. Cookies</h2>
-            <p>
-                Notre application peut utiliser des cookies pour améliorer votre expérience. Vous pouvez configurer votre navigateur pour 
-                refuser les cookies, mais cela peut affecter certaines fonctionnalités de l'application. Nous utilisons uniquement des cookies 
-                essentiels et analytiques.
-            </p>
-        </div>
-
-        <div class="policy-card">
-            <h2>9. Modifications de Cette Politique</h2>
-            <p>
-                Nous pouvons mettre à jour cette politique de confidentialité périodiquement. Nous vous informerons de tout changement 
-                significatif en publiant la nouvelle politique sur cette page avec une date de mise à jour révisée. Votre utilisation 
-                continue du service après les modifications constitue votre acceptation de la nouvelle politique.
-            </p>
-        </div>
-
-        <div class="policy-card">
-            <h2>10. Contact</h2>
-            <p>
-                Pour toute question concernant cette politique de confidentialité ou pour exercer vos droits, 
-                veuillez nous contacter à :
-            </p>
-            <div class="highlight-box">
-                <p><strong>📧 Email :</strong> support@re3el4u.com</p>
-                <p><strong>🌐 Site Web :</strong> https://re3el4u.pages.dev</p>
+            <div class="contact-card">
+                <div class="contact-icon">💼</div>
+                <h3>Email Professionnel</h3>
+                <p>Pour les partenariats et collaborations</p>
+                <a href="mailto:contact@tiktok-publisher.com">contact@tiktok-publisher.com</a>
             </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">🔧</div>
+                <h3>Support Technique</h3>
+                <p>Assistance pour l'intégration API</p>
+                <a href="mailto:tech@tiktok-publisher.com">tech@tiktok-publisher.com</a>
+            </div>
+        </div>
+
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="contact-icon">🕐</div>
+                <h3>Temps de Réponse</h3>
+                <p>Nous répondons généralement sous</p>
+                <p><strong style="color: #ff6b35;">24-48 heures</strong></p>
+                <p>(jours ouvrables)</p>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">🌍</div>
+                <h3>Localisation</h3>
+                <p>Hébergé mondialement via</p>
+                <p><strong style="color: #ff6b35;">Cloudflare Pages</strong></p>
+                <p>Disponible 24/7</p>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">💬</div>
+                <h3>Langues</h3>
+                <p>Support disponible en</p>
+                <p><strong style="color: #ff6b35;">Français & Anglais</strong></p>
+                <p>Documentation complète</p>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <h3>🔒 Vos Données Sont Sécurisées</h3>
+            <p>Toutes les communications sont chiffrées et traitées de manière confidentielle conformément à notre politique de confidentialité. Nous ne partageons jamais vos informations avec des tiers sans votre consentement explicite.</p>
         </div>
 
         <center>
@@ -330,9 +291,8 @@
         </center>
     </section>
 
-    <!-- Footer -->
     <footer>
-        <p>© 2025 Re3el4u. Tous droits réservés. | Propulsé par Cloudflare Pages 🔒</p>
+        <p>© 2025 TikTok Video Publisher. Tous droits réservés. | Propulsé par Cloudflare Pages 🔒</p>
     </footer>
 </body>
 </html>
