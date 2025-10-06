@@ -18,6 +18,7 @@
             line-height: 1.6;
         }
 
+        /* Navigation */
         nav {
             position: fixed;
             top: 0;
@@ -75,6 +76,9 @@
             transition: all 0.3s;
             border: none;
             cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .cta-button:hover {
@@ -83,9 +87,129 @@
             box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
         }
 
+        /* TikTok Button */
+        .tiktok-button {
+            background: linear-gradient(145deg, #1a1a1a, #000000);
+            color: #fff;
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            box-shadow: 
+                0 8px 20px rgba(0, 0, 0, 0.4),
+                0 4px 8px rgba(0, 0, 0, 0.3),
+                inset 0 -2px 4px rgba(0, 0, 0, 0.5),
+                inset 0 2px 4px rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: visible;
+        }
+
+        /* Bulle en verre autour du bouton */
+        .tiktok-button::after {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            right: -8px;
+            bottom: -8px;
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.1) 0%,
+                rgba(255, 255, 255, 0.05) 50%,
+                rgba(255, 255, 255, 0.15) 100%);
+            border-radius: 60px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 
+                0 8px 32px rgba(255, 255, 255, 0.1),
+                inset 0 1px 2px rgba(255, 255, 255, 0.3),
+                inset 0 -1px 2px rgba(0, 0, 0, 0.2);
+            z-index: -1;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            overflow: hidden;
+        }
+
+        .tiktok-button::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            transform: scale(0);
+            transition: transform 0.6s;
+            z-index: 1;
+        }
+
+        .tiktok-button:hover::before {
+            transform: scale(1);
+        }
+
+        .tiktok-button:hover {
+            background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 
+                0 15px 35px rgba(0, 0, 0, 0.5),
+                0 8px 15px rgba(0, 0, 0, 0.4),
+                inset 0 -3px 6px rgba(0, 0, 0, 0.6),
+                inset 0 3px 6px rgba(255, 255, 255, 0.15);
+        }
+
+        .tiktok-button:hover::after {
+            top: -12px;
+            left: -12px;
+            right: -12px;
+            bottom: -12px;
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.15) 0%,
+                rgba(255, 255, 255, 0.08) 50%,
+                rgba(255, 255, 255, 0.2) 100%);
+            box-shadow: 
+                0 12px 40px rgba(255, 255, 255, 0.15),
+                inset 0 2px 4px rgba(255, 255, 255, 0.4),
+                inset 0 -2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .tiktok-button:active {
+            transform: translateY(-2px) scale(0.98);
+            box-shadow: 
+                0 5px 15px rgba(0, 0, 0, 0.4),
+                inset 0 2px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        .tiktok-button:active::after {
+            top: -6px;
+            left: -6px;
+            right: -6px;
+            bottom: -6px;
+        }
+
+        .tiktok-button svg {
+            margin-right: 12px;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+            position: relative;
+            z-index: 2;
+        }
+
+        .tiktok-button span {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Hero Section */
         .hero {
             margin-top: 80px;
             padding: 120px 40px;
+            text-align: center;
             background: linear-gradient(135deg, #1a1d2e 0%, #2d1b3d 100%);
             position: relative;
             overflow: hidden;
@@ -102,19 +226,10 @@
         }
 
         .hero-content {
-            max-width: 1200px;
+            max-width: 900px;
             margin: 0 auto;
             position: relative;
             z-index: 1;
-            display: flex;
-            gap: 80px;
-            align-items: center;
-            padding-left: 20px;
-        }
-
-        .hero-text {
-            flex: 1;
-            text-align: left;
         }
 
         .hero h1 {
@@ -124,7 +239,7 @@
             line-height: 1.2;
         }
 
-        .gradient-text {
+        .hero .gradient-text {
             background: linear-gradient(135deg, #ff6b35 0%, #ff8555 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -137,105 +252,174 @@
             margin-bottom: 40px;
         }
 
-        .connect-header {
-            text-align: left;
-            margin: 50px 0 30px;
+        .button-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
         }
 
-        .connect-header h3 {
-            font-size: 28px;
-            font-weight: 700;
-            color: #fff;
-            margin-bottom: 12px;
+        /* Features Section */
+        .features {
+            padding: 100px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .connect-header p {
-            font-size: 16px;
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            font-size: 18px;
             color: rgba(255, 255, 255, 0.6);
         }
 
-        .social-buttons-container {
-            min-width: 200px;
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
 
-        .social-buttons-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            width: 200px;
-        }
-
-        .social-button {
-            padding: 14px 24px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        .feature-card {
+            background: #252841;
+            padding: 40px;
+            border-radius: 16px;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            cursor: pointer;
-            display: inline-flex;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ff6b35 0%, #ff8555 100%);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            border-color: #ff6b35;
+            box-shadow: 0 20px 40px rgba(255, 107, 53, 0.2);
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 24px;
+        }
+
+        .feature-card h3 {
+            font-size: 24px;
+            margin-bottom: 16px;
+            color: #fff;
+        }
+
+        .feature-card p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            padding: 100px 40px;
+            background: #252841;
+        }
+
+        .steps-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .step {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 60px;
+            align-items: center;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #ff6b35 0%, #ff8555 100%);
+            border-radius: 50%;
+            display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 14px;
-            position: relative;
-            overflow: visible;
-            color: #fff;
-            width: 200px;
+            font-size: 32px;
+            font-weight: 800;
+            flex-shrink: 0;
         }
 
-        .tiktok-button {
-            background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), 0 4px 8px rgba(0, 0, 0, 0.2), inset 0 -2px 4px rgba(0, 0, 0, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.08);
+        .step-content h3 {
+            font-size: 28px;
+            margin-bottom: 12px;
+            color: #ff6b35;
         }
 
-        .instagram-button {
-            background: linear-gradient(145deg, #d06b47 0%, #c5574d 25%, #b03652 50%, #9d3a5b 75%, #8a2f65 100%);
-            box-shadow: 0 8px 20px rgba(176, 54, 82, 0.3), 0 4px 8px rgba(138, 47, 101, 0.2), inset 0 -2px 4px rgba(0, 0, 0, 0.2), inset 0 2px 4px rgba(255, 255, 255, 0.15);
+        .step-content p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 18px;
+            line-height: 1.8;
         }
 
-        .facebook-button {
-            background: linear-gradient(145deg, #3b5998, #2d4373);
-            box-shadow: 0 8px 20px rgba(59, 89, 152, 0.3), 0 4px 8px rgba(45, 67, 115, 0.2), inset 0 -2px 4px rgba(0, 0, 0, 0.2), inset 0 2px 4px rgba(255, 255, 255, 0.15);
+        /* Footer */
+        footer {
+            background: #0f1117;
+            padding: 60px 40px 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .youtube-button {
-            background: linear-gradient(145deg, #cc3333, #b32929);
-            box-shadow: 0 8px 20px rgba(204, 51, 51, 0.3), 0 4px 8px rgba(179, 41, 41, 0.2), inset 0 -2px 4px rgba(0, 0, 0, 0.2), inset 0 2px 4px rgba(255, 255, 255, 0.15);
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
         }
 
-
-
-        .social-button:hover {
-            transform: translateY(-4px) scale(1.02);
+        .footer-section h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #ff6b35;
         }
 
-        .tiktok-button:hover {
-            background: linear-gradient(145deg, #3a3a3a, #2a2a2a);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 8px 15px rgba(0, 0, 0, 0.3);
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 12px;
+            transition: color 0.3s;
         }
 
-        .instagram-button:hover {
-            background: linear-gradient(145deg, #e07b57 0%, #d5675d 25%, #c04662 50%, #ad4a6b 75%, #9a3f75 100%);
-            box-shadow: 0 15px 35px rgba(176, 54, 82, 0.5);
+        .footer-section a:hover {
+            color: #ff6b35;
         }
 
-        .facebook-button:hover {
-            background: linear-gradient(145deg, #4b69a8, #3d5383);
-            box-shadow: 0 15px 35px rgba(59, 89, 152, 0.5);
-        }
-
-        .youtube-button:hover {
-            background: linear-gradient(145deg, #dc4343, #c33939);
-            box-shadow: 0 15px 35px rgba(204, 51, 51, 0.5);
-        }
-
-        .social-button:active {
-            transform: translateY(-2px) scale(0.98);
-        }
-
-        .social-button svg {
-            margin-right: 8px;
-            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
         }
 
         .status-badge {
@@ -247,38 +431,32 @@
             border-radius: 20px;
             font-size: 14px;
             font-weight: 600;
-            margin-top: 40px;
+            margin-top: 20px;
         }
 
-        @media (max-width: 968px) {
-            .hero-content {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .hero-text {
-                text-align: center;
-            }
-            
-            .connect-header {
-                text-align: center;
-            }
-            
+        @media (max-width: 768px) {
             .hero h1 {
                 font-size: 36px;
             }
-            
+
             .nav-links {
                 display: none;
             }
-            
-            .social-buttons-grid {
-                gap: 15px;
+
+            .button-group {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .step {
+                flex-direction: column;
+                text-align: center;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Navigation -->
     <nav>
         <div class="nav-container">
             <div class="logo">
@@ -288,6 +466,7 @@
             <ul class="nav-links">
                 <li><a href="#home">Accueil</a></li>
                 <li><a href="#features">Fonctionnalités</a></li>
+                <li><a href="#how-it-works">Comment ça marche</a></li>
                 <li><a href="/privacy.html">Confidentialité</a></li>
                 <li><a href="/contact.html">Contact</a></li>
             </ul>
@@ -295,54 +474,26 @@
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <div class="social-buttons-container">
-                <div class="connect-header">
-                    <h3>Connectez vos plateformes</h3>
-                    <p>Publiez en un clic</p>
-                </div>
+            <h1>
+                Publiez vos vidéos<br>
+                <span class="gradient-text">Google Drive vers TikTok</span>
+            </h1>
+            <p>La solution la plus simple pour publier automatiquement vos vidéos stockées sur Google Drive directement sur TikTok. Gagnez du temps et simplifiez votre workflow de création de contenu.</p>
 
-                <div class="social-buttons-grid">
-                    <button class="social-button tiktok-button">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
-                        </svg>
-                        <span>TikTok</span>
-                    </button>
-
-                    <button class="social-button instagram-button">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                        </svg>
-                        <span>Instagram</span>
-                    </button>
-
-                    <button class="social-button youtube-button">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                        </svg>
-                        <span>YouTube</span>
-                    </button>
-
-                    <button class="social-button facebook-button">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                        </svg>
-                        <span>Facebook</span>
-                    </button>
-                </div>
+            <div class="button-group">
+                <a href="#how-it-works" class="cta-button">Découvrir comment</a>
+                <button id="tiktok-login-btn" class="tiktok-button">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                    </svg>
+                    Connecter TikTok
+                </button>
             </div>
 
-            <div class="hero-text">
-                <h1>
-                    Publiez vos vidéos<br>
-                    <span class="gradient-text">Google Drive vers TikTok</span>
-                </h1>
-                <p>La solution la plus simple pour publier automatiquement vos vidéos stockées sur Google Drive directement sur TikTok. Gagnez du temps et simplifiez votre workflow de création de contenu.</p>
-                
-                <div class="status-badge">✓ Plateforme Vérifiée et Sécurisée</div>
-            </div>
+            <div class="status-badge">✓ Plateforme Vérifiée et Sécurisée</div>
         </div>
     </section>
 
@@ -455,15 +606,18 @@
     <script>
         // Configuration TikTok OAuth
         const TIKTOK_CONFIG = {
-            client_key: 'VOTRE_CLIENT_KEY_ICI',
+            client_key: 'VOTRE_CLIENT_KEY_ICI', // À remplacer par votre Client Key
             redirect_uri: 'https://tiktok-video-publisher-from-google-drive.pages.dev/callback',
-            scope: 'user.info.basic,video.upload,video.publish',
+            scope: 'user.info.basic,video.upload,video.publish', // Scopes nécessaires
         };
 
+        // Fonction de connexion TikTok
         document.getElementById('tiktok-login-btn').addEventListener('click', function() {
+            // Générer un state aléatoire pour la sécurité
             const state = Math.random().toString(36).substring(7);
             sessionStorage.setItem('tiktok_auth_state', state);
 
+            // Construire l'URL d'autorisation TikTok
             const authUrl = `https://www.tiktok.com/v2/auth/authorize/` +
                 `?client_key=${TIKTOK_CONFIG.client_key}` +
                 `&scope=${TIKTOK_CONFIG.scope}` +
@@ -471,11 +625,13 @@
                 `&redirect_uri=${encodeURIComponent(TIKTOK_CONFIG.redirect_uri)}` +
                 `&state=${state}`;
 
+            // Vérifier si la clé API est configurée
             if (TIKTOK_CONFIG.client_key === 'VOTRE_CLIENT_KEY_ICI') {
                 alert('⚠️ Veuillez d\'abord configurer votre Client Key TikTok dans le code JavaScript.');
                 return;
             }
 
+            // Rediriger vers TikTok pour l'authentification
             window.location.href = authUrl;
         });
     </script>
