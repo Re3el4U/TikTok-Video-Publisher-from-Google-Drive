@@ -345,5 +345,139 @@
             </div>
         </div>
     </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="section-header">
+            <h2>Fonctionnalités Puissantes</h2>
+            <p>Tout ce dont vous avez besoin pour automatiser vos publications TikTok</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">☁️</div>
+                <h3>Intégration Google Drive</h3>
+                <p>Connectez votre Google Drive et accédez facilement à toutes vos vidéos stockées dans le cloud.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎵</div>
+                <h3>Publication Automatique TikTok</h3>
+                <p>Publiez vos vidéos directement sur TikTok via l'API officielle en quelques clics seulement.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Rapide et Efficace</h3>
+                <p>Processus optimisé pour une publication ultra-rapide sans perte de qualité vidéo.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔐</div>
+                <h3>100% Sécurisé</h3>
+                <p>Chiffrement de bout en bout et conformité RGPD. Vos données restent privées et protégées.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Suivi des Publications</h3>
+                <p>Suivez l'état de vos publications et consultez l'historique de vos vidéos publiées.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Personnalisation Complète</h3>
+                <p>Ajoutez des descriptions, hashtags et configurez la visibilité de chaque publication.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="steps-container">
+            <div class="section-header">
+                <h2>Comment Ça Marche</h2>
+                <p>3 étapes simples pour commencer à publier</p>
+            </div>
+
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Connectez vos comptes</h3>
+                    <p>Autorisez l'accès à votre Google Drive et à votre compte TikTok via OAuth 2.0 sécurisé. Tout se fait en quelques clics sans compromettre vos identifiants.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Sélectionnez vos vidéos</h3>
+                    <p>Parcourez vos dossiers Google Drive et sélectionnez les vidéos que vous souhaitez publier sur TikTok. Prévisualisez-les avant la publication.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Publiez instantanément</h3>
+                    <p>Ajoutez une description, des hashtags, configurez la visibilité et publiez ! Votre vidéo sera disponible sur TikTok en quelques secondes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>TikTok Video Publisher</h3>
+                <p>La solution professionnelle pour publier vos vidéos Google Drive sur TikTok automatiquement.</p>
+                <div class="status-badge">✓ API Officielle TikTok</div>
+            </div>
+            <div class="footer-section">
+                <h3>Liens Rapides</h3>
+                <a href="/">Accueil</a>
+                <a href="#features">Fonctionnalités</a>
+                <a href="#how-it-works">Comment ça marche</a>
+                <a href="/contact.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Légal</h3>
+                <a href="/privacy.html">Politique de Confidentialité</a>
+                <a href="/terms.html">Conditions d'Utilisation</a>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <p>Email: support@tiktok-publisher.com</p>
+                <p>Plateforme: TikTok for Developers</p>
+                <p>Hébergement: Cloudflare Pages</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 TikTok Video Publisher. Tous droits réservés. | Propulsé par Cloudflare Pages 🔒</p>
+        </div>
+    </footer>
+
+    <script>
+        // Configuration TikTok OAuth
+        const TIKTOK_CONFIG = {
+            client_key: 'VOTRE_CLIENT_KEY_ICI',
+            redirect_uri: 'https://tiktok-video-publisher-from-google-drive.pages.dev/callback',
+            scope: 'user.info.basic,video.upload,video.publish',
+        };
+
+        document.getElementById('tiktok-login-btn').addEventListener('click', function() {
+            const state = Math.random().toString(36).substring(7);
+            sessionStorage.setItem('tiktok_auth_state', state);
+
+            const authUrl = `https://www.tiktok.com/v2/auth/authorize/` +
+                `?client_key=${TIKTOK_CONFIG.client_key}` +
+                `&scope=${TIKTOK_CONFIG.scope}` +
+                `&response_type=code` +
+                `&redirect_uri=${encodeURIComponent(TIKTOK_CONFIG.redirect_uri)}` +
+                `&state=${state}`;
+
+            if (TIKTOK_CONFIG.client_key === 'VOTRE_CLIENT_KEY_ICI') {
+                alert('⚠️ Veuillez d\'abord configurer votre Client Key TikTok dans le code JavaScript.');
+                return;
+            }
+
+            window.location.href = authUrl;
+        });
+    </script>
 </body>
 </html>
